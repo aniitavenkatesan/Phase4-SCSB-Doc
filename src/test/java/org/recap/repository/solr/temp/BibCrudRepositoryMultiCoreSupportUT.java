@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.recap.BaseTestCase;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.model.solr.Bib;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.solr.core.SolrTemplate;
@@ -17,7 +18,7 @@ import static junit.framework.TestCase.assertNotNull;
 
 public class BibCrudRepositoryMultiCoreSupportUT extends BaseTestCaseUT {
 
-    @Value("${solr.url}")
+    @Value("${" + PropertyKeyConstants.SOLR_URL + "}")
     String solrUrl;
 
     @Mock

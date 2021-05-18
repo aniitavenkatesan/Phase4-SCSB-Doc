@@ -13,6 +13,7 @@ import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.model.jpa.CollectionGroupEntity;
@@ -68,7 +69,7 @@ public class UpdateCgdUtilUT extends BaseTestCaseUT {
     @Mock
     HoldingsDetailsRepository holdingsDetailsRepository;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     String solrCore;
 
 

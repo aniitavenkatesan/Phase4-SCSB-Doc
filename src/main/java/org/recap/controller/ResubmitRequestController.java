@@ -1,6 +1,7 @@
 package org.recap.controller;
 
 import org.apache.commons.lang3.StringUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.request.ReplaceRequest;
@@ -30,7 +31,7 @@ public class ResubmitRequestController {
 
     private static final Logger logger = LoggerFactory.getLogger(ResubmitRequestController.class);
 
-    @Value("${scsb.gateway.url}")
+    @Value("${" + PropertyKeyConstants.SCSB_GATEWAY_URL + "}")
     private String scsbUrl;
 
     /**

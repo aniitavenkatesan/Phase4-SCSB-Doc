@@ -2,6 +2,7 @@ package org.recap.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.SolrServerException;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.admin.SolrAdmin;
@@ -52,13 +53,13 @@ public class SolrIndexController {
     @Autowired
     private SolrAdmin solrAdmin;
 
-    @Value("${commit.indexes.interval}")
+    @Value("${" + PropertyKeyConstants.COMMIT_INDEXES_INTERVAL + "}")
     private Integer commitIndexesInterval;
 
     @Autowired
     private SolrIndexService solrIndexService;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     private String solrCore;
 
     @Autowired

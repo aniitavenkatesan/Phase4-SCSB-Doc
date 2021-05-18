@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.BibliographicEntity;
@@ -73,7 +74,7 @@ public class TransferServiceUT extends BaseTestCaseUT {
     @Mock
     HelperUtil helperUtil;
 
-    @Value("${transfer.api.nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.TRANSFER_API_NONHOLDINGID_INSTITUTION + "}")
     String nonHoldingIdInstitutionForTransferApi;
 
     @Mock

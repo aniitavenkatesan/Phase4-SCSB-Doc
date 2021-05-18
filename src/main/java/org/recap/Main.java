@@ -29,25 +29,25 @@ public class Main {
     /**
      * The Solr server protocol.
      */
-    @Value("${solr.server.protocol}")
+	@Value("${" + PropertyKeyConstants.SOLR_SERVER_PROTOCOL + "}")
 	String solrServerProtocol;
 
     /**
      * The Solr url.
      */
-    @Value("${solr.url}")
+	@Value("${" + PropertyKeyConstants.SOLR_URL + "}")
 	String solrUrl;
 
     /**
      * The Solr parent core.
      */
-    @Value("${solr.parent.core}")
+	@Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
 	String solrParentCore;
 
     /**
      * The Tomcat max parameter count.
      */
-    @Value("${tomcat.maxParameterCount}")
+	@Value("${" + PropertyKeyConstants.TOMCAT_MAXPARAMETERCOUNT + "}")
 	Integer tomcatMaxParameterCount;
 
     /**

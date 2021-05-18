@@ -2,6 +2,7 @@ package org.recap.service.deaccession;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.solr.common.SolrInputDocument;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.model.jpa.HoldingsEntity;
@@ -30,10 +31,10 @@ public class DeAccessSolrDocumentService {
 
     private static final Logger logger = LoggerFactory.getLogger(DeAccessSolrDocumentService.class);
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     private String solrCore;
 
-    @Value("${nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.NONHOLDINGID_INSTITUTION + "}")
     private List<String> nonHoldingInstitutionList;
 
     @Autowired

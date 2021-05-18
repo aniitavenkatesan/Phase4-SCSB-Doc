@@ -1,5 +1,6 @@
 package org.recap.executors;
 
+import org.recap.PropertyKeyConstants;
 import org.recap.repository.jpa.BibliographicDetailsRepository;
 import org.recap.repository.jpa.HoldingsDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class MatchingBibItemIndexExecutorService extends MatchingIndexExecutorSe
     @Resource(name = "recapSolrTemplate")
     private SolrTemplate solrTemplate;
 
-    @Value("${nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.NONHOLDINGID_INSTITUTION + "}")
     private List<String> nonHoldingInstitutionList;
 
     /**

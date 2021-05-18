@@ -21,6 +21,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.admin.SolrAdmin;
@@ -106,16 +107,16 @@ public class BibItemIndexExecutorServiceUT extends BaseTestCaseUT {
     @Mock
     DateUtil dateUtil;
 
-    @Value("${solr.router.uri.type}")
+    @Value("${" + PropertyKeyConstants.SOLR_ROUTER_URI_TYPE + "}")
     String solrRouterURI;
 
-    @Value("${solr.server.protocol}")
+    @Value("${" + PropertyKeyConstants.SOLR_SERVER_PROTOCOL + "}")
     String solrServerProtocol;
 
-    @Value("${solr.url}")
+    @Value("${" + PropertyKeyConstants.SOLR_URL + "}")
     String solrUrl;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     String solrCore;
 
     @Before

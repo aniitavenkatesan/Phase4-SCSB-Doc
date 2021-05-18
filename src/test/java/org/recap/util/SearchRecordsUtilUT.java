@@ -38,7 +38,7 @@ public class SearchRecordsUtilUT extends BaseTestCaseUT {
     @Mock
     PropertyUtil propertyUtil;
 
-    @Value("${scsb.support.institution}")
+    @Value("${" + PropertyKeyConstants.SCSB_SUPPORT_INSTITUTION + "}")
     private String supportInstitution;
 
     @Test

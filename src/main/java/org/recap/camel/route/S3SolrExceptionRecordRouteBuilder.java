@@ -4,6 +4,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.model.dataformat.BindyType;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.csv.SolrExceptionReportCSVRecord;
@@ -28,7 +29,7 @@ public class S3SolrExceptionRecordRouteBuilder {
      * @param solrReportsS3Path the s3 solrReportsPath
      */
     @Autowired
-    public S3SolrExceptionRecordRouteBuilder(CamelContext context, @Value("${s3.add.s3.routes.on.startup}") boolean addS3RoutesOnStartup, @Value("${s3.solr.reports.dir}") String solrReportsS3Path) {
+    public S3SolrExceptionRecordRouteBuilder(CamelContext context, @Value("${" + PropertyKeyConstants.S3_ADD_S3_ROUTES_ON_STARTUP + "}") boolean addS3RoutesOnStartup, @Value("${" + PropertyKeyConstants.S3_SOLR_REPORTS_DIR + "}") String solrReportsS3Path) {
         try {
             if (addS3RoutesOnStartup) {
                 context.addRoutes(new RouteBuilder() {

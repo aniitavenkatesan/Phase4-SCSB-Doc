@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.component.jms.JmsQueueEndpoint;
 import org.apache.camel.component.solr.SolrConstants;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.admin.SolrAdmin;
 import org.recap.repository.jpa.InstitutionDetailsRepository;
@@ -40,22 +41,22 @@ public abstract class MatchingIndexExecutorService {
     @Autowired
     BibSolrCrudRepository bibSolrCrudRepository;
 
-    @Value("${solr.server.protocol}")
+    @Value("${" + PropertyKeyConstants.SOLR_SERVER_PROTOCOL + "}")
     String solrServerProtocol;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     String solrCore;
 
-    @Value("${solr.url}")
+    @Value("${" + PropertyKeyConstants.SOLR_URL + "}")
     String solrUrl;
 
-    @Value("${solr.router.uri.type}")
+    @Value("${" + PropertyKeyConstants.SOLR_ROUTER_URI_TYPE + "}")
     String solrRouterURI;
 
-    @Value("${matching.algorithm.indexing.batchsize}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_INDEXING_BATCHSIZE + "}")
     Integer batchSize;
 
-    @Value("${matching.algorithm.commit.interval}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_COMMIT_INTERVAL + "}")
     Integer commitInterval;
 
     /**

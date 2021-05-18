@@ -17,6 +17,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -46,10 +47,10 @@ public class SolrAdminAT extends BaseTestCaseUT {
     @Mock
     CoreAdminRequest.Create coreAdminCreateRequest;
 
-    @Value("${solr.solr.home}")
+    @Value("${" + PropertyKeyConstants.SOLR_SOLR_HOME + "}")
     String solrHome;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     private String solrParentCore;
 
     String tempCoreName1 = "temp0";

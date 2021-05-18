@@ -5,6 +5,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.model.jpa.HoldingsEntity;
 import org.recap.model.jpa.InstitutionEntity;
@@ -60,7 +61,7 @@ public class TransferControllerUT extends BaseTestCaseUT {
     @Mock
     private HelperUtil helperUtil;
 
-    @Value("${transfer.api.nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.TRANSFER_API_NONHOLDINGID_INSTITUTION + "}")
     private String nonHoldingIdInstitutionForTransferApi;
 
     public ItemTransferRequest getItemTransferRequest(){

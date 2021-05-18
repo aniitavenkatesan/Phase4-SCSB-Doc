@@ -9,6 +9,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.matchingalgorithm.MatchingCounter;
@@ -60,7 +61,7 @@ public class OngoingMatchingReportsService {
     @Autowired
     private CsvUtil csvUtil;
 
-    @Value("${ongoing.matching.report.directory}")
+    @Value("${" + PropertyKeyConstants.ONGOING_MATCHING_REPORT_DIRECTORY + "}")
     private String matchingReportsDirectory;
 
     @Resource(name = "recapSolrTemplate")

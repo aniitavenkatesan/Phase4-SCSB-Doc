@@ -1,6 +1,7 @@
 package org.recap.executors;
 
 import org.apache.commons.lang3.StringUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbConstants;
 import org.recap.repository.jpa.BibliographicDetailsRepository;
 import org.recap.repository.jpa.HoldingsDetailsRepository;
@@ -30,7 +31,7 @@ public class BibItemIndexExecutorService extends IndexExecutorService {
     @Resource(name = "recapSolrTemplate")
     private SolrTemplate solrTemplate;
 
-    @Value("${nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.NONHOLDINGID_INSTITUTION + "}")
     private List<String> nonHoldingInstitutionList;
 
     /**

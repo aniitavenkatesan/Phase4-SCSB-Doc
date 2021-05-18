@@ -3,6 +3,7 @@ package org.recap.camel.route;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.BindyType;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.model.csv.SolrExceptionReportCSVRecord;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class CSVSolrExceptionRecordRouteBuilder {
      * @param solrReportsDirectory the matching reports directory
      */
     @Autowired
-    public CSVSolrExceptionRecordRouteBuilder(CamelContext context, @Value("${solr.exception.report.directory}") String solrReportsDirectory) {
+    public CSVSolrExceptionRecordRouteBuilder(CamelContext context, @Value("${" + PropertyKeyConstants.SOLR_EXCEPTION_REPORT_DIRECTORY + "}") String solrReportsDirectory) {
         try {
             context.addRoutes(new RouteBuilder() {
                 @Override

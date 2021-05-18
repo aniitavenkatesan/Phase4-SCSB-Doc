@@ -3,6 +3,7 @@ package org.recap.service.transfer;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.SolrServerException;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.*;
@@ -58,7 +59,7 @@ public class TransferService {
     @Autowired
     HelperUtil helperUtil;
 
-    @Value("${transfer.api.nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.TRANSFER_API_NONHOLDINGID_INSTITUTION + "}")
     private String nonHoldingIdInstitutionForTransferApi;
 
     public BibliographicDetailsRepository getBibliographicDetailsRepository() {

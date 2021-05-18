@@ -1,6 +1,7 @@
 package org.recap.matchingalgorithm.service;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.MatchingBibInfoDetail;
@@ -41,7 +42,7 @@ public class MatchingBibInfoDetailService {
     @Autowired
     private ReportDataDetailsRepository reportDataDetailsRepository;
 
-    @Value("${matching.algorithm.bibinfo.batchsize}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_BIBINFO_BATCHSIZE + "}")
     private Integer batchSize;
 
     public ReportDetailRepository getReportDetailRepository() {

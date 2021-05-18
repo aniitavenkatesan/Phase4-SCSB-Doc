@@ -4,6 +4,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.model.dataformat.BindyType;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.csv.DeAccessionSummaryRecord;
@@ -28,7 +29,7 @@ public class S3DeAccessionSummaryReportRouteBuilder {
      * @param deaccessionPathS3 the deaccession Reports Path
      */
     @Autowired
-    public S3DeAccessionSummaryReportRouteBuilder(CamelContext context, @Value("${s3.add.s3.routes.on.startup}") boolean addS3RoutesOnStartup, @Value("${s3.deaccession.collection.report.dir}") String deaccessionPathS3) {
+    public S3DeAccessionSummaryReportRouteBuilder(CamelContext context, @Value("${" + PropertyKeyConstants.S3_ADD_S3_ROUTES_ON_STARTUP + "}") boolean addS3RoutesOnStartup, @Value("${" + PropertyKeyConstants.S3_DEACCESSION_COLLECTION_REPORT_DIR + "}") String deaccessionPathS3) {
         try {
             if (addS3RoutesOnStartup) {
                 context.addRoutes(new RouteBuilder() {

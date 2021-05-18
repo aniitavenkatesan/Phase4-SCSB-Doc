@@ -13,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.util.CommonUtil;
 import org.recap.util.PropertyUtil;
@@ -43,7 +44,7 @@ public class EmailServiceUT extends BaseTestCaseUT {
     @Mock
     CommonUtil commonUtil;
 
-    @Value("${scsb.email.assist.to}")
+    @Value("${" + PropertyKeyConstants.SCSB_EMAIL_ASSIST_TO + "}")
     String recapSupportEmailTo;
 
     @Test

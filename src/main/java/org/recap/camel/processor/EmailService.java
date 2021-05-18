@@ -4,6 +4,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.camel.EmailPayLoad;
 import org.recap.util.CommonUtil;
@@ -36,7 +37,7 @@ public class EmailService {
     @Autowired
     private CommonUtil commonUtil;
 
-    @Value("${scsb.email.assist.to}")
+    @Value("${" + PropertyKeyConstants.SCSB_EMAIL_ASSIST_TO + "}")
     private String recapSupportEmailTo;
 
     private String institutionCode;
@@ -129,7 +130,7 @@ public class EmailService {
         List<String> institutionCodes = commonUtil.findAllInstitutionCodesExceptSupportInstitution();
         String matchingEmailTo="";
         for (String institution : institutionCodes) {
-             matchingEmailTo = propertyUtil.getPropertyByInstitutionAndKey(institution, "email.matching.reports.to");
+             matchingEmailTo = propertyUtil.getPropertyByInstitutionAndKey(institution, PropertyKeyConstants.ILS.ILS_EMAIL_MATCHING_REPORTS_TO);
              cc.append(StringUtils.isNotBlank(matchingEmailTo) ? matchingEmailTo + "," : "");
 
         }
@@ -137,6 +138,6 @@ public class EmailService {
     }
 
     private void getCcBasedOnInstitution(EmailPayLoad emailPayLoad) {
-        emailPayLoad.setCc(propertyUtil.getPropertyByInstitutionAndKey(institutionCode, "email.accession.reports.to"));
+        emailPayLoad.setCc(propertyUtil.getPropertyByInstitutionAndKey(institutionCode, PropertyKeyConstants.ILS.ILS_EMAIL_MATCHING_REPORTS_TO));
     }
 }

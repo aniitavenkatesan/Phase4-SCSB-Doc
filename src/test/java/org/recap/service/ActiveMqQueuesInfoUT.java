@@ -3,6 +3,7 @@ package org.recap.service;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.util.ReflectionTestUtils;
 
@@ -13,16 +14,16 @@ public class ActiveMqQueuesInfoUT extends BaseTestCaseUT {
     @InjectMocks
     ActiveMqQueuesInfo activeMqQueuesInfo;
 
-    @Value("${activemq.jolokia.api.url}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_JOLOKIA_API_URL + "}")
     private String activeMqApiUrl;
 
-    @Value("${activemq.jolokia.api.queue.size.attribute}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_JOLOKIA_API_QUEUE_SIZE_ATTRIBUTE + "}")
     private String searchAttribute;
 
-    @Value("${activemq.web.console.url}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_WEB_CONSOLE_URL + "}")
     private String serviceUrl;
 
-    @Value("${activemq.credentials}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_CREDENTIALS + "}")
     private String activemqCredentials;
 
     @Test

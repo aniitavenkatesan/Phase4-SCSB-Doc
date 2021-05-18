@@ -1,5 +1,6 @@
 package org.recap.controller;
 
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.matchingalgorithm.service.MatchingBibInfoDetailService;
@@ -35,7 +36,7 @@ public class OngoingMatchingAlgorithmJobController {
     @Autowired
     private DateUtil dateUtil;
 
-    @Value("${matching.algorithm.bibinfo.batchsize}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_BIBINFO_BATCHSIZE + "}")
     private String batchSize;
 
     public Logger getLogger() {

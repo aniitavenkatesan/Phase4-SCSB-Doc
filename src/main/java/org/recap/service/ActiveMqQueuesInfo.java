@@ -2,6 +2,7 @@ package org.recap.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.codec.binary.Base64;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.model.queueinfo.QueueSizeInfoJson;
 import org.slf4j.Logger;
@@ -23,16 +24,16 @@ public class ActiveMqQueuesInfo {
 
     private static final Logger logger = LoggerFactory.getLogger(ActiveMqQueuesInfo.class);
 
-    @Value("${activemq.jolokia.api.url}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_JOLOKIA_API_URL + "}")
     private String activeMqApiUrl;
 
-    @Value("${activemq.jolokia.api.queue.size.attribute}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_JOLOKIA_API_QUEUE_SIZE_ATTRIBUTE + "}")
     private String searchAttribute;
 
-    @Value("${activemq.web.console.url}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_WEB_CONSOLE_URL + "}")
     private String serviceUrl;
 
-    @Value("${activemq.credentials}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_CREDENTIALS + "}")
     private String activemqCredentials;
 
     public Integer getActivemqQueuesInfo(String queueName){

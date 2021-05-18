@@ -4,6 +4,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.model.dataformat.BindyType;
+import org.recap.PropertyKeyConstants;
 import org.springframework.context.ApplicationContext;
 import org.recap.ScsbConstants;
 import org.recap.camel.processor.EmailService;
@@ -30,7 +31,7 @@ public class S3OngoingAccessionReportRouteBuilder {
      * @param applicationContext   the application context
      */
     @Autowired
-    public S3OngoingAccessionReportRouteBuilder(CamelContext context, @Value("${s3.add.s3.routes.on.startup}") boolean addS3RoutesOnStartup, @Value("${s3.ongoing.accession.collection.report.dir}") String ongoingAccessionPathS3, ApplicationContext applicationContext) {
+    public S3OngoingAccessionReportRouteBuilder(CamelContext context, @Value("${" + PropertyKeyConstants.S3_ADD_S3_ROUTES_ON_STARTUP + "}") boolean addS3RoutesOnStartup, @Value("${" + PropertyKeyConstants.S3_ONGOING_ACCESSION_COLLECTION_REPORT_DIR + "}") String ongoingAccessionPathS3, ApplicationContext applicationContext) {
         try {
             if (addS3RoutesOnStartup) {
                 context.addRoutes(new RouteBuilder() {

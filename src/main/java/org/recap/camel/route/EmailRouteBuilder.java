@@ -3,6 +3,7 @@ package org.recap.camel.route;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.commons.io.FileUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.camel.EmailPayLoad;
@@ -45,9 +46,9 @@ public class EmailRouteBuilder {
      * @param smtpServer        the smtp server
      */
     @Autowired
-    public EmailRouteBuilder(CamelContext context, @Value("${email.smtp.server.username}") String username, @Value("${email.smtp.server.password.file}") String passwordDirectory,
-                             @Value("${email.smtp.server.address.from}") String from, @Value("${email.scsb.updateCgd.to}") String upadteCgdTo,@Value("${email.scsb.updateCgd.cc}") String updateCGDCC, @Value("${email.scsb.batch.job.to}") String batchJobTo,
-                             @Value("${email.scsb.updateCgd.subject}") String updateCgdSubject, @Value("${email.scsb.batch.job.subject}") String batchJobSubject, @Value("${email.smtp.server}") String smtpServer) {
+    public EmailRouteBuilder(CamelContext context, @Value("${" + PropertyKeyConstants.EMAIL_SMTP_SERVER_USERNAME + "}") String username, @Value("${" + PropertyKeyConstants.EMAIL_SMTP_SERVER_PASSWORD_FILE + "}") String passwordDirectory,
+                             @Value("${" + PropertyKeyConstants.EMAIL_SMTP_SERVER_ADDRESS_FROM + "}") String from, @Value("${" + PropertyKeyConstants.EMAIL_SCSB_UPDATECGD_TO + "}") String upadteCgdTo, @Value("${" + PropertyKeyConstants.EMAIL_SCSB_UPDATECGD_CC + "}") String updateCGDCC, @Value("${" + PropertyKeyConstants.EMAIL_SCSB_BATCH_JOB_TO + "}") String batchJobTo,
+                             @Value("${" + PropertyKeyConstants.EMAIL_SCSB_UPDATECGD_SUBJECT + "}") String updateCgdSubject, @Value("${" + PropertyKeyConstants.EMAIL_SCSB_BATCH_JOB_SUBJECT + "}") String batchJobSubject, @Value("${" + PropertyKeyConstants.EMAIL_SMTP_SERVER + "}") String smtpServer) {
         try {
             context.addRoutes(new RouteBuilder() {
                 @Override

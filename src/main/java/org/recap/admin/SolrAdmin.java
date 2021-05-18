@@ -5,6 +5,7 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.request.CoreAdminRequest;
 import org.apache.solr.client.solrj.response.CoreAdminResponse;
 import org.apache.solr.common.params.CoreAdminParams;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,13 +27,13 @@ public class SolrAdmin {
 
     private static final Logger logger = LoggerFactory.getLogger(SolrAdmin.class);
 
-    @Value("${solr.configsets.dir}")
+    @Value("${" + PropertyKeyConstants.SOLR_CONFIGSETS_DIR + "}")
     private String configSetsDir;
 
-    @Value("${solr.solr.home}")
+    @Value("${" + PropertyKeyConstants.SOLR_SOLR_HOME + "}")
     private String solrHome;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     private String solrParentCore;
 
     @Autowired

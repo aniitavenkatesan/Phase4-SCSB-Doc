@@ -22,6 +22,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.admin.SolrAdmin;
 import org.recap.model.solr.SolrIndexRequest;
@@ -63,13 +64,13 @@ public class ExecutorAT extends BaseTestCaseUT {
     @Mock
     ProducerTemplate producerTemplate;
 
-    @Value("${solr.server.protocol}")
+    @Value("${" + PropertyKeyConstants.SOLR_SERVER_PROTOCOL + "}")
     String solrServerProtocol;
 
-    @Value("${solr.url}")
+    @Value("${" + PropertyKeyConstants.SOLR_URL + "}")
     String solrUrl;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     String solrCore;
 
     @Mock

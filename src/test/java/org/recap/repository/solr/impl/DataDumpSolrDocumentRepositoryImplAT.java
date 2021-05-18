@@ -19,6 +19,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.BibliographicEntity;
@@ -61,10 +62,10 @@ public class DataDumpSolrDocumentRepositoryImplAT extends BaseTestCaseUT {
     @Mock
     private SolrQueryBuilder solrQueryBuilder;
 
-    @Value("${etl.data.dump.deleted.type.onlyorphan.institution}")
+    @Value("${" + PropertyKeyConstants.ETL_DATA_DUMP_DELETED_TYPE_ONLYORPHAN_INSTITUTION + "}")
     private String deletedOnlyOrphanInstitution;
 
-    @Value("${etl.data.dump.incremental.type.nonfulltree.institution}")
+    @Value("${" + PropertyKeyConstants.ETL_DATA_DUMP_INCREMENTAL_TYPE_NONFULLTREE_INSTITUTION + "}")
     private String incrementalNonFullTreeInstitution;
 
     @Mock

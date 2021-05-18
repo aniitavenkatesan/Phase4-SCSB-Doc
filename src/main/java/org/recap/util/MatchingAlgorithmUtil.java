@@ -10,6 +10,7 @@ import org.apache.solr.client.solrj.response.FacetField;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.matchingalgorithm.MatchingCounter;
@@ -81,7 +82,7 @@ public class MatchingAlgorithmUtil {
 
     private String coreParentFilterQuery = "{!parent which=\"ContentType:parent\"}";
 
-    @Value("${matching.report.header.value.length}")
+    @Value("${" + PropertyKeyConstants.MATCHING_REPORT_HEADER_VALUE_LENGTH + "}")
     private Integer matchingHeaderValueLength;
 
     @Autowired

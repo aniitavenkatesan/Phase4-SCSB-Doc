@@ -20,10 +20,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
-import org.recap.BaseTestCaseUT;
-import org.recap.ScsbCommonConstants;
-import org.recap.ScsbConstants;
-import org.recap.TestUtil;
+import org.recap.*;
 import org.recap.matchingalgorithm.MatchingCounter;
 import org.recap.model.jpa.InstitutionEntity;
 import org.recap.model.jpa.ReportDataEntity;
@@ -90,7 +87,7 @@ public class OngoingMatchingReportsServiceUT extends BaseTestCaseUT{
     @Mock
     InstitutionDetailsRepository institutionDetailsRepository;
 
-    @Value("${ongoing.matching.report.directory}")
+    @Value("${" + PropertyKeyConstants.ONGOING_MATCHING_REPORT_DIRECTORY + "}")
     String matchingReportsDirectory;
 
     @Mock
@@ -99,7 +96,7 @@ public class OngoingMatchingReportsServiceUT extends BaseTestCaseUT{
     @Mock
     PropertyUtil propertyUtil;
 
-    @Value("${scsb.support.institution}")
+    @Value("${" + PropertyKeyConstants.SCSB_SUPPORT_INSTITUTION + "}")
     private String supportInstitution;
 
     @Before

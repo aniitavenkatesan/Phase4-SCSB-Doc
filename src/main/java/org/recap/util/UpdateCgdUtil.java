@@ -4,6 +4,7 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.common.SolrInputDocument;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.camel.EmailPayLoad;
@@ -40,10 +41,10 @@ public class UpdateCgdUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateCgdUtil.class);
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     private String solrCore;
 
-    @Value("${nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.NONHOLDINGID_INSTITUTION + "}")
     private List<String> nonHoldingInstitutionList;
 
     @Autowired

@@ -1,6 +1,7 @@
 package org.recap.controller;
 
 import org.apache.commons.lang3.StringUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.executors.MatchingBibItemIndexExecutorService;
@@ -54,7 +55,7 @@ public class MatchingAlgorithmController {
     @Autowired
     private MatchingBibInfoDetailService matchingBibInfoDetailService;
 
-    @Value("${matching.algorithm.batchSize}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_BATCHSIZE + "}")
     private String matchingAlgoBatchSize;
 
     @Autowired

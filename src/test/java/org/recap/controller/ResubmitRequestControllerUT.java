@@ -3,6 +3,7 @@ package org.recap.controller;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.model.request.ReplaceRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -16,7 +17,7 @@ public class ResubmitRequestControllerUT extends BaseTestCaseUT {
     ResubmitRequestController resubmitRequestController;
 
 
-    @Value("${scsb.gateway.url}")
+    @Value("${" + PropertyKeyConstants.SCSB_GATEWAY_URL + "}")
     private String scsbUrl;
 
 

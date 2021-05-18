@@ -5,6 +5,7 @@ import org.apache.commons.collections4.ListUtils;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrInputDocument;
+import org.recap.PropertyKeyConstants;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.repository.jpa.BibliographicDetailsRepository;
 import org.recap.repository.jpa.HoldingsDetailsRepository;
@@ -31,7 +32,7 @@ public class SolrIndexService {
 
     private static final Logger logger = LoggerFactory.getLogger(SolrIndexService.class);
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     private String solrCore;
 
     @Autowired
@@ -49,10 +50,10 @@ public class SolrIndexService {
     @Autowired
     private SolrClient solrClient;
 
-    @Value("${submit.collection.owninginstbibidlist.partition.size}")
+    @Value("${" + PropertyKeyConstants.SUBMIT_COLLECTION_OWNINGINSTBIBIDLIST_PARTITION_SIZE + "}")
     private Integer submitCollectionOwnInstBibIdListPartitionSize;
 
-    @Value("${nonholdingid.institution}")
+    @Value("${" + PropertyKeyConstants.NONHOLDINGID_INSTITUTION + "}")
     private List<String> nonHoldingInstitutionList;
 
 

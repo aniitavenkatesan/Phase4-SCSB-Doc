@@ -21,6 +21,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.model.jpa.HoldingsEntity;
@@ -70,22 +71,22 @@ public class MatchingBibItemIndexExecutorServiceUT extends BaseTestCaseUT {
     @Mock
     ProducerTemplate producerTemplate;
 
-    @Value("${matching.algorithm.indexing.batchsize}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_INDEXING_BATCHSIZE + "}")
     Integer batchSize;
 
-    @Value("${matching.algorithm.commit.interval}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_COMMIT_INTERVAL + "}")
     Integer commitInterval;
 
     @Mock
     CamelContext camelContext;
 
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     String solrCore;
 
-    @Value("${solr.url}")
+    @Value("${" + PropertyKeyConstants.SOLR_URL + "}")
     String solrUrl;
 
-    @Value("${solr.router.uri.type}")
+    @Value("${" + PropertyKeyConstants.SOLR_ROUTER_URI_TYPE + "}")
     String solrRouterURI;
 
 

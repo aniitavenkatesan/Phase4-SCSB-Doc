@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.ReportDataEntity;
@@ -53,7 +54,7 @@ public class ReportGeneratorUT extends BaseTestCaseUT {
     @Mock
     ProducerTemplate producerTemplate;
 
-    @Value("${scsb.collection.report.directory}")
+    @Value("${" + PropertyKeyConstants.SCSB_COLLECTION_REPORT_DIRECTORY + "}")
     String reportsDirectory;
 
     @Mock

@@ -1,5 +1,6 @@
 package org.recap.controller;
 
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.matchingalgorithm.service.MatchingBibInfoDetailService;
 import org.recap.model.solr.SolrIndexRequest;
@@ -39,7 +40,7 @@ public class OngoingMatchingAlgorithmJobRestController {
     @Autowired
     DateUtil dateUtil;
 
-    @Value("${matching.algorithm.bibinfo.batchsize}")
+    @Value("${" + PropertyKeyConstants.MATCHING_ALGORITHM_BIBINFO_BATCHSIZE + "}")
     private String batchSize;
 
     @Autowired

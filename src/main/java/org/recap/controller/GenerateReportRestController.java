@@ -1,6 +1,7 @@
 package org.recap.controller;
 
 import org.apache.commons.lang3.StringUtils;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.InstitutionEntity;
@@ -47,7 +48,7 @@ public class GenerateReportRestController {
     @Autowired
     private InstitutionDetailsRepository institutionDetailsRepository;
 
-    @Value("${scsb.support.institution}")
+    @Value("${" + PropertyKeyConstants.SCSB_SUPPORT_INSTITUTION + "}")
     private String supportInstitution;
 
     @PostMapping(value = "/generateReports", consumes = MediaType.APPLICATION_JSON_VALUE)

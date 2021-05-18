@@ -16,10 +16,7 @@ import org.mockito.MockitoAnnotations;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
-import org.recap.BaseTestCaseUT;
-import org.recap.ScsbCommonConstants;
-import org.recap.ScsbConstants;
-import org.recap.TestUtil;
+import org.recap.*;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.model.jpa.CollectionGroupEntity;
 import org.recap.model.jpa.HoldingsEntity;
@@ -61,7 +58,7 @@ public class CommonUtilUT extends BaseTestCaseUT {
     @Mock
     CollectionGroupDetailsRepository collectionGroupDetailsRepository;
 
-    @Value("${scsb.support.institution}")
+    @Value("${" + PropertyKeyConstants.SCSB_SUPPORT_INSTITUTION + "}")
     private String supportInstitution;
 
     @Before

@@ -1,6 +1,7 @@
 package org.recap.camel.activemq;
 
 import org.apache.activemq.broker.jmx.DestinationViewMBean;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ public class JmxHelper {
 
     private static final Logger logger = LoggerFactory.getLogger(JmxHelper.class);
 
-    @Value("${activemq.jmx.service.url}")
+    @Value("${" + PropertyKeyConstants.ACTIVEMQ_JMX_SERVICE_URL + "}")
     private String serviceUrl;
     private MBeanServerConnection connection;
 

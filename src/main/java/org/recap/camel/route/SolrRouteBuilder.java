@@ -3,6 +3,7 @@ package org.recap.camel.route;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.solr.SolrConstants;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,8 +28,8 @@ public class SolrRouteBuilder {
      */
     @Autowired
     public SolrRouteBuilder(CamelContext camelContext,
-                            @Value("${solr.url}") String solrUri,
-                            @Value("${solr.parent.core}") String solrCore) {
+                            @Value("${" + PropertyKeyConstants.SOLR_URL + "}") String solrUri,
+                            @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}") String solrCore) {
 
         try {
             camelContext.addRoutes(new RouteBuilder() {

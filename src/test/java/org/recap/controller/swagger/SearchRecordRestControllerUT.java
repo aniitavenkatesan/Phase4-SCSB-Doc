@@ -9,6 +9,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.recap.BaseTestCaseUT;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.model.search.DataDumpSearchResult;
 import org.recap.model.search.SearchRecordsRequest;
@@ -46,7 +47,7 @@ public class SearchRecordRestControllerUT extends BaseTestCaseUT {
     @Mock
     PropertyUtil propertyUtil;
 
-    @Value("${scsb.support.institution}")
+    @Value("${" + PropertyKeyConstants.SCSB_SUPPORT_INSTITUTION + "}")
     private String supportInstitution;
 
     @Test

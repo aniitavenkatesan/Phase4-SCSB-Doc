@@ -6,6 +6,7 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.model.jpa.BibliographicEntity;
 import org.recap.model.jpa.CollectionGroupEntity;
@@ -108,7 +109,7 @@ public class CommonUtil {
     @Autowired
     private CollectionGroupDetailsRepository collectionGroupDetailsRepository;
 
-    @Value("${scsb.support.institution}")
+    @Value("${" + PropertyKeyConstants.SCSB_SUPPORT_INSTITUTION + "}")
     private String supportInstitution;
 
     /**

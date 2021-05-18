@@ -8,6 +8,7 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.model.jpa.BibliographicEntity;
@@ -69,10 +70,10 @@ public class DataDumpSolrDocumentRepositoryImpl implements CustomDocumentReposit
 
     private List<ItemValueResolver> itemValueResolvers;
 
-    @Value("${etl.data.dump.deleted.type.onlyorphan.institution}")
+    @Value("${" + PropertyKeyConstants.ETL_DATA_DUMP_DELETED_TYPE_ONLYORPHAN_INSTITUTION + "}")
     private String deletedOnlyOrphanInstitution;
 
-    @Value("${etl.data.dump.incremental.type.nonfulltree.institution}")
+    @Value("${" + PropertyKeyConstants.ETL_DATA_DUMP_INCREMENTAL_TYPE_NONFULLTREE_INSTITUTION + "}")
     private String incrementalNonFullTreeInstitution;
 
     @Override

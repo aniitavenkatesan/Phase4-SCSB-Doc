@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import org.apache.camel.ProducerTemplate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.admin.SolrAdmin;
@@ -65,25 +66,25 @@ public abstract class IndexExecutorService {
     /**
      * The Solr server protocol.
      */
-    @Value("${solr.server.protocol}")
+    @Value("${" + PropertyKeyConstants.SOLR_SERVER_PROTOCOL + "}")
     String solrServerProtocol;
 
     /**
      * The Solr core.
      */
-    @Value("${solr.parent.core}")
+    @Value("${" + PropertyKeyConstants.SOLR_PARENT_CORE + "}")
     String solrCore;
 
     /**
      * The Solr url.
      */
-    @Value("${solr.url}")
+    @Value("${" + PropertyKeyConstants.SOLR_URL + "}")
     String solrUrl;
 
     /**
      * The Solr router uri.
      */
-    @Value("${solr.router.uri.type}")
+    @Value("${" + PropertyKeyConstants.SOLR_ROUTER_URI_TYPE + "}")
     String solrRouterURI;
 
     /**

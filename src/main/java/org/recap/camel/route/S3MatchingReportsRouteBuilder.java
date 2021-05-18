@@ -4,6 +4,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.model.dataformat.BindyType;
+import org.recap.PropertyKeyConstants;
 import org.recap.ScsbCommonConstants;
 import org.recap.ScsbConstants;
 import org.recap.camel.processor.EmailService;
@@ -33,8 +34,8 @@ public class S3MatchingReportsRouteBuilder {
      * @param s3MatchingReportsDirectory the s3 MatchingReports Directory
      * @param applicationContext         the application context
      */
-    public S3MatchingReportsRouteBuilder(CamelContext camelContext, @Value("${s3.add.s3.routes.on.startup}") boolean addS3RoutesOnStartup, @Value("${ongoing.matching.report.directory}") String matchingReportsDirectory,
-                                         @Value("${s3.matchingAlgorithm.reports.dir}") String s3MatchingReportsDirectory, ApplicationContext applicationContext) {
+    public S3MatchingReportsRouteBuilder(CamelContext camelContext, @Value("${" + PropertyKeyConstants.S3_ADD_S3_ROUTES_ON_STARTUP + "}") boolean addS3RoutesOnStartup, @Value("${" + PropertyKeyConstants.ONGOING_MATCHING_REPORT_DIRECTORY + "}") String matchingReportsDirectory,
+                                         @Value("${" + PropertyKeyConstants.S3_MATCHINGALGORITHM_REPORTS_DIR + "}") String s3MatchingReportsDirectory, ApplicationContext applicationContext) {
         if (addS3RoutesOnStartup) {
             try {
                 camelContext.addRoutes(new RouteBuilder() {
